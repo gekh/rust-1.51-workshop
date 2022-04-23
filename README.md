@@ -20,8 +20,8 @@ It should print a version number of 1.51 or higher.
 Finally, clone this repository by running this at the terminal:
 
 ```shell
-git clone https://github.com/rtfeldman/intro-to-rust
-cd intro-to-rust
+git clone https://git@github.com:gekh/rust-1.51-workshop.git
+cd rust-1.51-workshop
 ```
 
 You're all set!
