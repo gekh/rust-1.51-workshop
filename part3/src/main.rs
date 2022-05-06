@@ -2,6 +2,7 @@ enum CitySize {
     Town,       // approximate residents: 1_000
     City,       // approximate residents: 10_000
     Metropolis, // approximate residents: 1_000_000
+    Area { residents: u64 },
 }
 
 struct City {
@@ -36,6 +37,10 @@ impl City {
                     residents,
                 )
             }
+            CitySize::Area { residents } => (
+                format!("an *area* of exactly {} residents", residents),
+                residents,
+            ),
         };
 
         City {
@@ -46,8 +51,12 @@ impl City {
 }
 
 fn main() {
-    // 👉 TODO Use City::new() to create a Metropolis-sized city here
     let mut rustville = City::new(CitySize::City);
+    println!("This city is {}", rustville.description);
+
+    rustville = City::new(CitySize::Area {
+        residents: 12_232_023,
+    });
     println!("This city is {}", rustville.description);
 
     rustville = City::new(CitySize::Town);
